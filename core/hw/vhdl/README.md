@@ -30,6 +30,9 @@
 #### Files structure
 ```
 RISCV_IP_CORE
+ \_ config_Pkg.vhd
+ \_ std_Pkg.vhd
+ \_ core_Pkg.vhd
  \_ core_top.vhd
      \_ axi_bram_ctrl_0.xci
      \_ sram.vhd

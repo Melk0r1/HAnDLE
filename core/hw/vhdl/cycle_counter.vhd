@@ -6,7 +6,7 @@
 --      Company            : Instituto Superior Técnico
 --                         : University of Lisbon
 --
---      Description        : 64-bit Cycle counter
+--      Description        : 64-bit Cycle counter/Timer
 --
 ----------------------------------------------------------------------------------------------
 

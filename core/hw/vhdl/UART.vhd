@@ -23,7 +23,7 @@ entity UART is
     adr_i   : in  std_logic_vector(31 downto 0);
     we_i    : in  std_logic;
     clk_i   : in  std_logic;
-    ena_i   : in std_logic;
+    ena_i   : in  std_logic;
     rst_n_i : in  std_logic;
     rx      : in  std_logic;
     tx      : out std_logic
@@ -88,16 +88,16 @@ architecture Behavioral of UART is
     end component uart_rx;
 
     constant c_CLKS_PER_BIT : integer := 868; -- 100MHz/115200
-    constant c_BIT_PERIOD : time := 8680 ns;
+    constant c_BIT_PERIOD   : time := 8680 ns;
 
     -- TX
-    signal r_TX_DV     : std_logic := '0';
-    signal r_TX_BYTE   : std_logic_vector(7 downto 0) := (others => '0');
-    signal w_TX_DONE   : std_logic := '0';
+    signal r_TX_DV   : std_logic := '0';
+    signal r_TX_BYTE : std_logic_vector(7 downto 0) := (others => '0');
+    signal w_TX_DONE : std_logic := '0';
 
     -- RX
-    signal w_RX_DV     : std_logic := '0';
-    signal w_RX_BYTE   : std_logic_vector(7 downto 0) := (others => '0');
+    signal w_RX_DV   : std_logic := '0';
+    signal w_RX_BYTE : std_logic_vector(7 downto 0) := (others => '0');
 
     -- TX FIFO signals
     signal fifo_tx_empty : std_logic := '0';

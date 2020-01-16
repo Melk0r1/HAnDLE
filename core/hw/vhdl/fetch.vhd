@@ -8,7 +8,7 @@
 --                         : University of Lisbon
 --
 --
---      Description        : Instruction Fetch Stage inserts instruction into the pipeline. It
+--      Description        : The Instruction Fetch Stage inserts instruction into the pipeline. It
 --                           uses a BRAM component which holds
 --                           the instructions. The next instruction is computed in the decode
 --                           stage.

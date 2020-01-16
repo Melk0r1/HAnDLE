@@ -17,9 +17,9 @@ use ieee.numeric_std.all;
 
 entity RISCV_IP_CORE_v1_0 is
     generic (
-        C_S00_AXI_ID_WIDTH   : integer := 4;
-        C_S00_AXI_DATA_WIDTH : integer := 256;
-        C_S00_AXI_ADDR_WIDTH : integer := 32;
+        C_S00_AXI_ID_WIDTH     : integer := 4;
+        C_S00_AXI_DATA_WIDTH   : integer := 256;
+        C_S00_AXI_ADDR_WIDTH   : integer := 32;
         C_S00_AXI_AWUSER_WIDTH : integer := 1;
         C_S00_AXI_ARUSER_WIDTH : integer := 1;
         C_S00_AXI_WUSER_WIDTH  : integer := 1;
@@ -151,9 +151,9 @@ s00_axi_ruser <= (others => '0');
 -- Instantiation of Axi Bus Interface S00_AXI
 core_top_inst : core_top
     generic map (
-        C_S_AXI_ID_WIDTH     => C_S00_AXI_ID_WIDTH,
-        C_S_AXI_DATA_WIDTH   => C_S00_AXI_DATA_WIDTH,
-        C_S_AXI_ADDR_WIDTH   => C_S00_AXI_ADDR_WIDTH
+        C_S_AXI_ID_WIDTH   => C_S00_AXI_ID_WIDTH,
+        C_S_AXI_DATA_WIDTH => C_S00_AXI_DATA_WIDTH,
+        C_S_AXI_ADDR_WIDTH => C_S00_AXI_ADDR_WIDTH
     )
     port map (
         -- Instruction Memory AXI Slave
