@@ -61,29 +61,98 @@ RISCV_IP_CORE
      \_ cycle_counter.vhd
 ```
 
-## Xilinx Vivado IPs configuration
+# Xilinx Vivado IPs configuration
 
-### axi_bram_ctrl_0
+## axi_bram_ctrl_0 (AXI BRAM Controller)
 
-TODO
+ - **AXI Protocol:** AXI4
+ - **Data Width:** 256
+ - **Memory Depth:** 1024
+ - **ID Width:** 4
+ - **Support AXI Narrow Bursts:** Yes
+ - **Read Latency:** 1
+ - **Read Command Optimization:** No
+ - **BRAM Instance:** External
+ - **Number of BRAM interfaces:** 1
 
-### blk_mem_gen_0
+## blk_mem_gen_0 (Block Memory Generator)
 
-TODO
+### Basic:
 
-### multiplier
+ - **Interface Type:** Native
+ - **Memory Type:** True Dual Port RAM
 
-TODO
+### Port A Options:
 
-### divider_0
+ - **Write Width:** 256
+ - **Read Width:** 256
+ - **Write Depth:** 512
+ - **Read Depth:** 512
 
-TODO
+### Port B Options:
 
-### uart_fifo_tx_0
+ - **Write Width:** 32
+ - **Read Width:** 32
 
-TODO
+## multiplier (Multiplier)
 
-### uart_fifo_rx_0
+### Basic:
 
-TODO
+ - **Multiplier Type:** Parallel Multiplier
+ - **Data type:** Signed / Signed
+ - **Width:** 33 / 33
+ - **Multiplier Construction:** Use Mults
+ - **Optimization Options:** Speed Optimized
 
+### Output and Control:
+
+ - **Pipeline Stages:** 6
+
+
+## divider_0 (Divider Generator)
+
+### Channel Settings:
+
+ - **Algorithm Type:** Radix2
+ - **Operand Sign:** Signed
+ - **Dividend Width:** 33
+ - **Divisor Width:** 33
+ - **Remainder Type:** Remainder
+ - **Detect Divide-By-Zero:** Yes
+
+### Options:
+
+ - **Clocks per Division:** 1
+ - **Flow Control:** Non Blocking
+ - **Latency Configuration:** Manual
+ - **Latency:** 30
+ - **ACKLEN:** Yes
+ - **ARESETN:** Yes
+
+## uart_fifo_tx_0 (FIFO Generator)
+
+### Basic:
+
+ - **Interface Type:** Native
+ - **Fifo Implementation:** Common Clock Builtin FIFO
+
+### Native Ports:
+
+ - **Read Mode:** Standard FIFO
+ - **Write Width:** 8
+ - **Write Depth:** 512
+ - **Output Register:** Yes
+
+## uart_fifo_rx_0 (FIFO Generator)
+
+### Basic:
+
+ - **Interface Type:** Native
+ - **Fifo Implementation:** Common Clock Builtin FIFO
+
+### Native Ports:
+
+ - **Read Mode:** Standard FIFO
+ - **Write Width:** 8
+ - **Write Depth:** 512
+ - **Output Register:** Yes
